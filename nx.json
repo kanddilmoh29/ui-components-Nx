@@ -1,5 +1,5 @@
 {
-  "npmScope": "workspace",
+  "npmScope": "workshop",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
@@ -12,6 +12,18 @@
       "tags": []
     },
     "ui-components": {
+      "tags": []
+    },
+    "material": {
+      "tags": []
+    },
+    "core-data": {
+      "tags": []
+    },
+    "forms": {
+      "tags": []
+    },
+    "structured-content": {
       "tags": []
     }
   }
