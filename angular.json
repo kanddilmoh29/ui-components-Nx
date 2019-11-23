@@ -185,68 +185,6 @@
           "styleext": "scss"
         }
       }
-    },
-    "forms": {
-      "projectType": "library",
-      "root": "libs/forms",
-      "sourceRoot": "libs/forms/src",
-      "prefix": "ui",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/forms/tsconfig.lib.json",
-              "libs/forms/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/forms/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/forms/jest.config.js",
-            "tsConfig": "libs/forms/tsconfig.spec.json",
-            "setupFile": "libs/forms/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
-    },
-    "structured-content": {
-      "projectType": "library",
-      "root": "libs/structured-content",
-      "sourceRoot": "libs/structured-content/src",
-      "prefix": "ui",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/structured-content/tsconfig.lib.json",
-              "libs/structured-content/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/structured-content/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/structured-content/jest.config.js",
-            "tsConfig": "libs/structured-content/tsconfig.spec.json",
-            "setupFile": "libs/structured-content/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
     }
   },
   "cli": {
