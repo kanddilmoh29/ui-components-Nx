@@ -7,6 +7,7 @@ import { DocsModule } from './docs/docs.module';
 import { FormDocsModule } from './form-docs/form-docs.module';
 import { NavigationDocsModule } from './navigation-docs/navigation-docs.module';
 import { StructuredContentDocsModule } from './structured-content-docs/structured-content-docs.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -19,7 +20,8 @@ import { StructuredContentDocsModule } from './structured-content-docs/structure
     StructuredContentDocsModule,
     NavigationDocsModule,
     FormDocsModule,
-    DocsModule
+    DocsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

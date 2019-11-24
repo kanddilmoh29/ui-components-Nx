@@ -25,7 +25,10 @@
               "apps/ui-components/src/favicon.ico",
               "apps/ui-components/src/assets"
             ],
-            "styles": ["apps/ui-components/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/ui-components/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -84,7 +87,10 @@
               "apps/ui-components/tsconfig.app.json",
               "apps/ui-components/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/ui-components/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ui-components/**"
+            ]
           }
         },
         "test": {
@@ -118,8 +124,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/ui-components-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/ui-components-e2e/**"]
+            "tsConfig": [
+              "apps/ui-components-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ui-components-e2e/**"
+            ]
           }
         }
       }
@@ -137,7 +148,10 @@
               "libs/material/tsconfig.lib.json",
               "libs/material/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/material/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/material/**"
+            ]
           }
         },
         "test": {
@@ -168,7 +182,10 @@
               "libs/core-data/tsconfig.lib.json",
               "libs/core-data/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/core-data/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/core-data/**"
+            ]
           }
         },
         "test": {
@@ -199,7 +216,10 @@
               "libs/accordion/tsconfig.lib.json",
               "libs/accordion/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/accordion/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/accordion/**"
+            ]
           }
         },
         "test": {
@@ -214,6 +234,126 @@
       "schematics": {
         "@nrwl/angular:component": {
           "styleext": "true"
+        }
+      }
+    },
+    "rxjs": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:class": {
+          "skipTests": true
+        },
+        "@nrwl/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@nrwl/angular:directive": {
+          "skipTests": true
+        },
+        "@nrwl/angular:guard": {
+          "skipTests": true
+        },
+        "@nrwl/angular:module": {
+          "skipTests": true
+        },
+        "@nrwl/angular:pipe": {
+          "skipTests": true
+        },
+        "@nrwl/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "apps/rxjs",
+      "sourceRoot": "apps/rxjs/src",
+      "prefix": "workshop",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/rxjs",
+            "index": "apps/rxjs/src/index.html",
+            "main": "apps/rxjs/src/main.ts",
+            "polyfills": "apps/rxjs/src/polyfills.ts",
+            "tsConfig": "apps/rxjs/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/rxjs/src/favicon.ico",
+              "apps/rxjs/src/assets"
+            ],
+            "styles": [
+              "apps/rxjs/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/rxjs/src/environments/environment.ts",
+                  "with": "apps/rxjs/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "rxjs:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "rxjs:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "rxjs:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/rxjs/tsconfig.app.json",
+              "apps/rxjs/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/rxjs/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/rxjs/jest.config.js",
+            "tsConfig": "apps/rxjs/tsconfig.spec.json",
+            "setupFile": "apps/rxjs/src/test-setup.ts"
+          }
         }
       }
     }

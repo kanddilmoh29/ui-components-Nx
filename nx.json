@@ -22,6 +22,9 @@
     },
     "accordion": {
       "tags": []
+    },
+    "rxjs": {
+      "tags": []
     }
   }
 }
