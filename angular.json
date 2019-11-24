@@ -185,6 +185,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "accordion": {
+      "projectType": "library",
+      "root": "libs/accordion",
+      "sourceRoot": "libs/accordion/src",
+      "prefix": "workshop",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/accordion/tsconfig.lib.json",
+              "libs/accordion/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/accordion/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/accordion/jest.config.js",
+            "tsConfig": "libs/accordion/tsconfig.spec.json",
+            "setupFile": "libs/accordion/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "true"
+        }
+      }
     }
   },
   "cli": {

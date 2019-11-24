@@ -19,7 +19,8 @@
       "@workshop/material": ["libs/material/src/index.ts"],
       "@workshop/core-data": ["libs/core-data/src/index.ts"],
       "@workshop/forms": ["libs/forms/src/index.ts"],
-      "@workshop/structured-content": ["libs/structured-content/src/index.ts"]
+      "@workshop/structured-content": ["libs/structured-content/src/index.ts"],
+      "@workshop/accordion": ["libs/accordion/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,3 +1,4 @@
+import { AccordionModule } from '@workshop/accordion';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DocsRootComponent } from './docs-root/docs-root.component';
@@ -8,6 +9,7 @@ import { DocsRootComponent } from './docs-root/docs-root.component';
   declarations: [DocsRootComponent], 
   imports: [
     CommonModule,
+    AccordionModule
   ],
   exports: [DocsRootComponent]
 })
