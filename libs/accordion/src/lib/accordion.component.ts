@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
+@Component({ 
   selector: 'ui-accordion', 
   template: `
     <h1>Hello from Accordion</h1>
