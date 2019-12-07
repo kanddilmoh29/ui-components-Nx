@@ -25,6 +25,12 @@
     },
     "rxjs": {
       "tags": []
+    },
+    "hitcherz-e2e": {
+      "tags": []
+    },
+    "hitcherz": {
+      "tags": []
     }
   }
 }
